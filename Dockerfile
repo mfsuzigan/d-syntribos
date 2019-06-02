@@ -1,11 +1,11 @@
-FROM ubuntu:16.04
-MAINTAINER Michel Suzigan <mfsuzigan@gmail.com
+FROM ubuntu:18.04
+MAINTAINER Michel Suzigan <mfsuzigan@gmail.com>
+COPY models /home/syntribos/models
+COPY payloads /home/syntribos/payloads
+COPY d-syntribos.sh /home/syntribos
 WORKDIR /home/syntribos
-USER root
-COPY syntribos /home/syntribos
-COPY poi /home/syntribos/poi
-RUN apt-get update && apt-get -y upgrade && apt-get -y install git python python-pip && pip install --upgrade pip
-RUN pip install .
-RUN syntribos init --no_downloads --force
-ENTRYPOINT ["syntribos"]
+RUN apt-get update && apt-get -y upgrade && apt-get -y install apt-utils python python-pip build-essential python-all-dev python-wheel
+RUN python -m pip install --user syntribos
+RUN chmod +x d-syntribos.sh
+ENTRYPOINT ["./d-syntribos.sh"]
 CMD [""]

@@ -1,0 +1,6 @@
+%method% %path% HTTP/1.1
+%acceptHeader%
+%contentTypeHeader%
+%authorizationHeader%
+%templateSeparator%
+%body%

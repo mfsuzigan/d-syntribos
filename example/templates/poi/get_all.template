@@ -1,3 +1,0 @@
-GET poi-api/v1/points HTTP/1.1
-Accept: application/json
-Authorization: Basic eHkuaW5jOioxMjMh
