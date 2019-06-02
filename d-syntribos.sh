@@ -68,4 +68,4 @@ removeEmptyLines "execution/d-syntribos.conf"
 
 PATH=$PATH:/root/.local/bin
 syntribos init --no_downloads --force
-syntribos --config-file=execution/d-syntribos.conf run
+syntribos --no_colorize --config-file=execution/d-syntribos.conf run
